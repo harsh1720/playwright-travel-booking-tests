@@ -1,0 +1,24 @@
+# .super-linter.yml
+
+languages:
+  typescript: true
+  markdown: true
+  json: true
+  yaml: true
+
+# Disable all others explicitly
+disable:
+  javascript: true
+  python: true
+  java: true
+  csharp: true
+  dockerfile: true
+  html: true
+  xml: true
+  shell: true
+  css: true
+  powershell: true
+  ruby: true
+  go: true
+  php: true
+  rust: true
