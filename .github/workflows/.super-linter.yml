@@ -1,6 +1,0 @@
-# .super-linter.yml
-run:
-  - typescript
-  - markdown
-  - json
-  - yaml
