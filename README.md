@@ -110,3 +110,6 @@ Feel free to fork, contribute or raise issues.
 ## 📝 License
 
 MIT License – Free to use, modify, and distribute.
+
+![CI](https://github.com/harsh1720/playwright-travel-booking-tests/actions/workflows/playwright.yml/badge.svg)
+
