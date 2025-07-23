@@ -1,5 +1,5 @@
 // pages/BookingPage.ts
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class BookingPage {
   readonly page: Page;
@@ -12,6 +12,7 @@ export class BookingPage {
   readonly cardNumberInput: Locator;
   readonly nameOnCardInput: Locator;
   readonly purchaseButton: Locator;
+  readonly errorMessage: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -24,10 +25,13 @@ export class BookingPage {
     this.cardNumberInput = page.locator('#creditCardNumber');
     this.nameOnCardInput = page.locator('#nameOnCard');
     this.purchaseButton = page.locator('input[type="submit"]');
+    this.errorMessage = page.locator('.error-message');
   }
 
-  async fillPassengerDetails() {
-    await this.nameInput.fill('Harsh Tamakuwala');
+  async fillPassengerDetails(partial: boolean = false) {
+    if (!partial) {
+      await this.nameInput.fill('Harsh Tamakuwala');
+    }
     await this.addressInput.fill('133 Rue Battant');
     await this.cityInput.fill('Paris');
     await this.stateInput.fill('Île-de-France');
@@ -39,5 +43,9 @@ export class BookingPage {
 
   async purchaseFlight() {
     await this.purchaseButton.click();
+  }
+
+  async assertErrorVisible(message: string) {
+    await expect(this.errorMessage).toContainText(message);
   }
 }
