@@ -25,11 +25,6 @@ The goal of this project is to simulate and verify the functionality of a travel
 - Select origin, destination, date, and passenger count
 - Verify confirmation and booking reference
 
-### ❌ Negative Tests
-- Try booking without selecting a flight
-- Submit an empty booking form
-- Check for proper error validation messages
-
 ---
 
 ## 📁 Folder Structure
